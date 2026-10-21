@@ -1,66 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420">
   <defs>
+    <style>
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes glowBlue { 0%, 100% { filter: drop-shadow(0 0 6px rgba(59,130,246,0.5)); } 50% { filter: drop-shadow(0 0 20px rgba(59,130,246,0.9)); } }
+      @keyframes glowPurple { 0%, 100% { filter: drop-shadow(0 0 6px rgba(139,92,246,0.5)); } 50% { filter: drop-shadow(0 0 20px rgba(139,92,246,0.9)); } }
+      @keyframes glowCyan { 0%, 100% { filter: drop-shadow(0 0 6px rgba(6,182,212,0.5)); } 50% { filter: drop-shadow(0 0 20px rgba(6,182,212,0.9)); } }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    </style>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#0b1120"/>
-    </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#05070f"/>
     </linearGradient>
     <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="14"/>
-    </filter>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feGaussianBlur stdDeviation="14"/>
     </filter>
   </defs>
 
   <!-- Background -->
   <rect width="1600" height="420" fill="url(#bg)"/>
 
-  <!-- Ambient glow orbs -->
-  <circle cx="1240" cy="-120" r="340" fill="#3b82f6" fill-opacity="0.12" filter="url(#blur)"/>
-  <circle cx="-120" cy="460" r="300" fill="#8b5cf6" fill-opacity="0.10" filter="url(#blur)"/>
-  <circle cx="1560" cy="430" r="260" fill="#06b6d4" fill-opacity="0.08" filter="url(#blur)"/>
+  <!-- Ambient neon glows -->
+  <circle cx="1340" cy="-90" r="320" fill="#3b82f6" fill-opacity="0.10" filter="url(#blur)"/>
+  <circle cx="-90" cy="430" r="280" fill="#8b5cf6" fill-opacity="0.08" filter="url(#blur)"/>
 
-  <!-- Bento card 1 (left) -->
-  <rect x="40" y="60" width="470" height="300" rx="22" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.08"/>
-  <rect x="40" y="60" width="470" height="4" rx="2" fill="#3b82f6"/>
-  <text x="72" y="128" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="30" font-weight="800" fill="#ffffff" letter-spacing="-0.5">Reverse shell</text>
-  <text x="72" y="162" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="16" font-weight="600" fill="#cbd5e1">from JIRA</text>
-  <text x="72" y="200" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="14" fill="#94a3b8">MyGroovy &#8226; Groovy RCE &#8226; PTY shell</text>
-  <text x="72" y="280" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#64748b">0x00 &#8226; 0x01 &#8226; 0x02 &#8226; 0x03</text>
+  <!-- Left glass bento card -->
+  <rect x="60" y="56" width="690" height="308" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)"/>
+  <rect x="60" y="56" width="690" height="4" rx="2" fill="#3b82f6"/>
 
-  <!-- Bento card 2 (top right) -->
-  <rect x="540" y="60" width="500" height="140" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.08"/>
-  <rect x="540" y="60" width="500" height="4" rx="2" fill="#8b5cf6"/>
-  <text x="572" y="116" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="20" font-weight="700" fill="#ffffff">masscan</text>
-  <text x="572" y="150" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#94a3b8">./masscan 192.168.0.0-192.168.255.255 -p80,443,8080</text>
+  <!-- Kinetic typography (staggered fade-in) -->
+  <text x="92" y="132" font-family="monospace" font-size="32" font-weight="800" fill="#ffffff" letter-spacing="-0.4"
+        style="animation: fadeIn 1.2s ease-out 0.4s both;">FROM JIRA DASHBOARD</text>
+  <text x="92" y="170" font-family="sans-serif" font-size="20" font-weight="700" fill="#3b82f6" style="animation: fadeIn 1.2s ease-out 1.1s both; animation-name: glowBlue;">→ MyGroovy Groovy RCE</text>
+  <text x="92" y="208" font-family="monospace" font-size="15" fill="#cbd5e1" style="animation: fadeIn 1.2s ease-out 1.8s both;">nc -lvnp 4444 → reverse shell → interactive PTY</text>
 
-  <!-- Bento card 3 (bottom right) -->
-  <rect x="540" y="220" width="500" height="140" rx="18" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.08"/>
-  <rect x="540" y="220" width="500" height="4" rx="2" fill="#06b6d4"/>
-  <text x="572" y="276" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="20" font-weight="700" fill="#ffffff">reverse shell</text>
-  <text x="572" y="310" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#94a3b8">nc -lvnp 4444 &#8226; /bin/bash -i</text>
+  <!-- Right terminal pane -->
+  <rect x="790" y="56" width="750" height="308" rx="18" fill="rgba(5,7,15,0.92)" stroke="rgba(255,255,255,0.05)"/>
+  <rect x="790" y="56" width="750" height="34" rx="18" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="818" cy="73" r="6" fill="#ef4444"/>
+  <circle cx="836" cy="73" r="6" fill="#f59e0b"/>
+  <circle cx="854" cy="73" r="6" fill="#22c55e"/>
+  <text x="820" y="80" font-family="monospace" font-size="13" fill="#64748b">root@jira:~$ groovy-console.execute()</text>
+  <text x="820" y="130" font-family="monospace" font-size="13" fill="#3b82f6" style="animation: fadeIn 1s ease-out 2.2s both;">println "RCE obtained"</text>
+  <text x="820" y="154" font-family="monospace" font-size="13" fill="#cbd5e1" style="animation: fadeIn 1s ease-out 2.7s both;">$ nc -lvnp 4444</text>
+  <text x="820" y="178" font-family="monospace" font-size="13" fill="#06b6d4" style="animation: fadeIn 1s ease-out 3.2s both;">Connection from [192.168.2.37] accepted</text>
+  <text x="820" y="202" font-family="monospace" font-size="13" fill="#a7f3d0" style="animation: fadeIn 1s ease-out 3.7s both;">jira@blackb0x:/opt/atlassian/jira/bin$</text>
+  <text x="820" y="226" font-family="monospace" font-size="13" fill="#cbd5e1">_</text>
+  <animate attributeName="fill" values="#cbd5e1;transparent" dur="0.9s" repeatCount="indefinite" begin="4.5s"/>
 
-  <!-- Bento card 4 (far right) -->
-  <rect x="1070" y="60" width="490" height="300" rx="22" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.08"/>
-  <rect x="1070" y="60" width="490" height="4" rx="2" fill="#ef4444"/>
-  <text x="1102" y="128" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="17" font-weight="700" fill="#ffffff">&#9888; Authorized use only</text>
-  <text x="1102" y="166" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#94a3b8">Educational / CTF /</text>
-  <text x="1102" y="186" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#94a3b8">your own systems</text>
-  <circle cx="1200" cy="240" r="60" fill="#ffffff" fill-opacity="0.06"/>
-  <text x="1172" y="250" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="48" font-weight="900" fill="#3b82f6" opacity="0.9">&#128269;</text>
-  <text x="1102" y="330" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#64748b">2026 edition</text>
-  <text x="1102" y="352" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" fill="#64748b">semtexbughunt</text>
+  <!-- Journey pipeline (bottom) -->
+  <g transform="translate(92, 330)">
+    <circle cx="0" cy="0" r="7" fill="#3b82f6" style="animation: glowBlue 2.5s ease-in-out infinite"/>
+    <text x="24" y="6" font-family="monospace" font-size="13" fill="#64748b">JIRA dashboard</text>
+    <line x1="96" y1="0" x2="178" y2="0" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="190" cy="0" r="7" fill="#8b5cf6" style="animation: glowPurple 2.5s ease-in-out infinite 1.2s"/>
+    <text x="214" y="6" font-family="monospace" font-size="13" fill="#64748b">Groovy RCE</text>
+    <line x1="282" y1="0" x2="374" y2="0" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="386" cy="0" r="7" fill="#06b6d4" style="animation: glowCyan 2.5s ease-in-out infinite 2.4s"/>
+    <text x="410" y="6" font-family="monospace" font-size="13" fill="#64748b">Reverse shell</text>
+  </g>
 
-  <!-- Accent lines -->
-  <line x1="72" y1="228" x2="150" y2="228" stroke="#3b82f6" stroke-width="2.5"/>
-  <line x1="572" y1="178" x2="650" y2="178" stroke="#8b5cf6" stroke-width="2"/>
-  <line x1="572" y1="338" x2="650" y2="338" stroke="#06b6d4" stroke-width="2"/>
+  <!-- Status chip -->
+  <rect x="92" y="362" width="128" height="22" rx="7" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.4)"/>
+  <text x="108" y="378" font-family="monospace" font-size="11.5" fill="#3b82f6" font-weight="700">Authorized use</text>
+
+  <!-- JIRA brand mark (small, top-right) -->
+  <image href="./img/JIRA.jpg" x="1240" y="68" width="150" height="150" preserveAspectRatio="xMidYMid slice"
+         style="opacity: 0.5; filter: grayscale(0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;"
+         animation="fadeIn 1.2s ease-out 3.6s both"/>
 </svg>
