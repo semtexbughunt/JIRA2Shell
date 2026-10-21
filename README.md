@@ -33,7 +33,7 @@ I've seen many environments in my career where the JIRA web application is insta
 
 ## 0x00 · Introduction on JIRA
 
-<p align="center"><img src="./img/JIRA.jpg" alt="JIRA brand mark" width="280"></p>
+<p align="center"><img src="./img/JIRA.jpg" alt="JIRA brand mark" width="20"></p>
 
 JIRA Software is a powerful platform that combines issue collection and agile project management capabilities into a single application. Using JIRA helps you plan and organize tasks, workflows, and reports for your agile team more efficiently.
 
