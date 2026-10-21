@@ -33,7 +33,7 @@ I've seen many environments in my career where the JIRA web application is insta
 
 ## 0x00 · Introduction on JIRA
 
-![JIRA brand mark](./img/JIRA.jpg)
+<p align="center"><img src="./img/JIRA.jpg" alt="JIRA brand mark" width="360"></p>
 
 JIRA Software is a powerful platform that combines issue collection and agile project management capabilities into a single application. Using JIRA helps you plan and organize tasks, workflows, and reports for your agile team more efficiently.
 
@@ -43,7 +43,7 @@ I've seen many environments in my career where the JIRA web application is insta
 
 ## 0x01 · Locate the JIRA servers on the LAN
 
-![Network scan icon](./img/0x01.png)
+<p align="center"><img src="./img/0x01.png" alt="Network scan icon" width="480"></p>
 
 Usually, JIRA servers are configured by default to run on port 8080, but I've seen many times where the bind port was changed to 80 (HTTP) or 443 (HTTPS).
 
@@ -59,13 +59,13 @@ Let's say that you are inside a local area network with the subnet `192.168.255.
 
 After masscan finished scanning the LAN, you will see output results inside of the file `JIRA.where-are-you.txt`. JIRA should look like this in your web browser:
 
-![JIRA login page in a web browser](./img/screen1.jpg)
+<p align="center"><img src="./img/screen1.jpg" alt="JIRA login page in a web browser" width="480"></p>
 
 ---
 
 ## 0x02 · Getting Remote Code Execution from JIRA
 
-![Remote code execution icon](./img/bomb.jpg)
+<p align="center"><img src="./img/bomb.jpg" alt="Remote code execution icon" width="480"></p>
 
 You are probably saying OK, I'm logged in on JIRA, now what?
 
@@ -73,7 +73,7 @@ You have to know that JIRA supports the **Groovy** language. Groovy is a powerfu
 
 We will use the add-on **MyGroovy** in order to execute our script to execute shell commands. To do so, go to the **Administration** button (top-right) and choose **Add-ons**. It will ask again for your credentials. In the search field, type *MyGroovy*, press Enter and click on the **Install** button. After the installation, go on the left menu and click on **MyGroovy console**. You should see this in your web browser:
 
-![MyGroovy console in JIRA administration](./img/screen2.jpg)
+<p align="center"><img src="./img/screen2.jpg" alt="MyGroovy console in JIRA administration" width="480"></p>
 
 Are you ready for RCE? In the console box, type the following and click on **Execute** button after:
 
@@ -101,7 +101,7 @@ Easy like that.
 
 ## 0x03 · Let's get a reverse shell
 
-![Reverse shell established](./img/shell1.png)
+<p align="center"><img src="./img/shell1.png" alt="Reverse shell established" width="480"></p>
 
 To finalize this assessment, I believe a cool way would be to obtain a reverse shell from JIRA. In order to get a reverse shell, we will type again in the console box of the **MyGroovy** add-on the following script, assuming your netcat listener is `192.168.2.100` on port `4444`:
 
@@ -149,7 +149,7 @@ What is the biggest threat to data security? I would say, in one word: **humans*
 
 If you have any questions on that subject, don't hesitate to contact me.
 
-![Shrug icon](./img/shrug.jpg)
+<p align="center"><img src="./img/shrug.jpg" alt="Shrug icon" width="480"></p>
 
 ---
 
