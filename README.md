@@ -1,8 +1,10 @@
 # 💥 Reverse shell from JIRA
 
+<img src="./img/hero.svg" width="1600" alt="Hero banner: reverse shell from JIRA — MyGroovy, Groovy RCE, PTY shell, 2026 edition"/>
+
 Remote code execution — and a fully interactive reverse shell — from a JIRA application server, using the **MyGroovy** add-on's Groovy console.
 
-A 2026 walkthrough of the same technique, rebuilt from `syriusbughunt/From_JIRA_to_Shell` with every image migrated into this repository.
+Rebuilt from `syriusbughunt/From_JIRA_to_Shell` for 2026, with every image migrated into this repository.
 
 ---
 
@@ -143,8 +145,24 @@ If you have any questions on that subject, don't hesitate to contact me.
 
 ---
 
+### 🖼️ Figures
+
+| Figure | File | Shown in |
+|--------|------|----------|
+| JIRA login page | `./img/screen1.jpg` | 0x01 |
+| MyGroovy console | `./img/screen2.jpg` | 0x02 |
+| Brand mark | `./img/JIRA.jpg` | 0x00 |
+| Scan icon | `./img/0x01.png` | 0x01 |
+| RCE icon | `./img/bomb.jpg` | 0x02 |
+| Shell icon | `./img/shell1.png` | 0x03 |
+| Shrug icon | `./img/shrug.jpg` | 0x02 |
+
+All figures are committed to [`./img/`](./img/) and referenced with relative links — nothing relies on external hotlinking that could break or expire.
+
+---
+
 > [!NOTE]
-> **Images.** All screenshots and figures used in this guide are committed to this repository under [`./img/`](./img/) and referenced with relative links, so nothing relies on external hotlinking that could break or expire.
+> **Images.** All screenshots and figures used in this guide are committed to this repository under [`./img/`](./img/) and referenced with relative links.
 
 ---
 
