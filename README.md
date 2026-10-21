@@ -91,6 +91,7 @@ drwxr-xr-x  25 root   root     4096 Nov 25 12:57 ..
 
 Easy like that.
 
+<img src="./img/shrug.jpg" alt="Shrug icon" width="200">
 ---
 
 ## 0x03 · Let's get a reverse shell <img src="./img/shell1.png" alt="Reverse shell established" width="20">
@@ -141,7 +142,6 @@ What is the biggest threat to data security? I would say, in one word: **humans*
 
 If you have any questions on that subject, don't hesitate to contact me.
 
-<img src="./img/shrug.jpg" alt="Shrug icon" width="200">
 
 ---
 
